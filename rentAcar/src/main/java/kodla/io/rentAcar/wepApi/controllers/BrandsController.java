@@ -1,7 +1,7 @@
 package kodla.io.rentAcar.wepApi.controllers;
 
-import kodla.io.rentAcar.business.abstracts.BrandService;
 import kodla.io.rentAcar.entities.concretes.Brand;
+import kodla.io.rentAcar.business.abstracts.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

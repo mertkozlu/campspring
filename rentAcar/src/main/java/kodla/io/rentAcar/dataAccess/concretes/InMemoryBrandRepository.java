@@ -1,6 +1,6 @@
-package kodla.io.rentAcar.dateAccess.concretes;
+package kodla.io.rentAcar.dataAccess.concretes;
 
-import kodla.io.rentAcar.dateAccess.abstracts.BrandRepository;
+import kodla.io.rentAcar.dataAccess.abstracts.BrandRepository;
 import kodla.io.rentAcar.entities.concretes.Brand;
 import org.springframework.stereotype.Repository;
 

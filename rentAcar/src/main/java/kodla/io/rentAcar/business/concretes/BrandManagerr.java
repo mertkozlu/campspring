@@ -1,7 +1,7 @@
 package kodla.io.rentAcar.business.concretes;
 
 import kodla.io.rentAcar.business.abstracts.BrandService;
-import kodla.io.rentAcar.dateAccess.abstracts.BrandRepository;
+import kodla.io.rentAcar.dataAccess.abstracts.BrandRepository;
 import kodla.io.rentAcar.entities.concretes.Brand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

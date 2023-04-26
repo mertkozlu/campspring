@@ -1,4 +1,4 @@
-package kodla.io.rentAcar.dateAccess.abstracts;
+package kodla.io.rentAcar.dataAccess.abstracts;
 
 import kodla.io.rentAcar.entities.concretes.Brand;
 
