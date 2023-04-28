@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service //Bu sınıf bir business nesnesidir
-public class BrandManagerr implements BrandService {
+public class BrandManager implements BrandService {
     private BrandRepository brandRepository;
 
     @Autowired
-    public BrandManagerr(BrandRepository brandRepository) {
+    public BrandManager(BrandRepository brandRepository) {
         this.brandRepository = brandRepository;
     }
 
