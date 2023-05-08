@@ -1,4 +1,4 @@
-package kodla.io.rentAcar.business.requests;
+package kodla.io.rentAcar.dto.requests;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
