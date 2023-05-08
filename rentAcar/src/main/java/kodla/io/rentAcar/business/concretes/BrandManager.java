@@ -5,23 +5,20 @@ import kodla.io.rentAcar.business.requests.CreateBrandRequest;
 import kodla.io.rentAcar.business.responses.GetAllBrandsResponse;
 import kodla.io.rentAcar.dataAccess.abstracts.BrandRepository;
 import kodla.io.rentAcar.entities.concretes.Brand;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service //Bu sınıf bir business nesnesidir
+@AllArgsConstructor
 public class BrandManager implements BrandService {
     private BrandRepository brandRepository;
 
-    @Autowired
-    public BrandManager(BrandRepository brandRepository) {
-        this.brandRepository = brandRepository;
-    }
-
     @Override
     public List<GetAllBrandsResponse> getAll() {
+
         List<Brand> brands = brandRepository.findAll();
         List<GetAllBrandsResponse> brandsResponses = new ArrayList<GetAllBrandsResponse>();
 
