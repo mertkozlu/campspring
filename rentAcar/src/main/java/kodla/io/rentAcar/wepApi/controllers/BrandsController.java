@@ -1,9 +1,12 @@
 package kodla.io.rentAcar.wepApi.controllers;
 
 import kodla.io.rentAcar.dto.requests.CreateBrandRequest;
+import kodla.io.rentAcar.dto.requests.UpdateBrandRequest;
 import kodla.io.rentAcar.dto.responses.GetAllBrandsResponse;
 import kodla.io.rentAcar.business.abstracts.BrandService;
+import kodla.io.rentAcar.dto.responses.GetByIdBrandResponse;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,13 +17,29 @@ import java.util.List;
 public class BrandsController {
     private BrandService brandService;
 
-    @GetMapping("/getall")
+    @GetMapping()
     public List<GetAllBrandsResponse> getAll() {
         return brandService.getAll();
     }
 
-    @PostMapping("/add")
+    @PostMapping()
+    @ResponseStatus(code = HttpStatus.CREATED)
     public void add(@RequestBody CreateBrandRequest createBrandRequest) {
         this.brandService.add(createBrandRequest);
+    }
+
+    @GetMapping("/{id}")
+    public GetByIdBrandResponse getById(@PathVariable int id) {
+        return brandService.getById(id);
+    }
+
+    @PutMapping
+    public void update(@RequestBody UpdateBrandRequest updateBrandRequest) {
+        this.brandService.update(updateBrandRequest);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable int id) {
+        this.brandService.delete(id);
     }
 }

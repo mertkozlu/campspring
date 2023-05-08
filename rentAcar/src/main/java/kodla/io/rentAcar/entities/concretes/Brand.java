@@ -16,6 +16,6 @@ public class Brand {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Id++
     @Column(name = "id") // Kolonun veritabanında id karşılığı
     private int id;
-    @Column(name ="name") // Kolonun veritabanında name karşılığı
+    @Column(name = "name") // Kolonun veritabanında name karşılığı
     private String name;
 }
