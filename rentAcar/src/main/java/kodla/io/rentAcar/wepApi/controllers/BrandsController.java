@@ -17,28 +17,28 @@ import java.util.List;
 public class BrandsController {
     private BrandService brandService;
 
-    @GetMapping()
+    @GetMapping("/getAll")
     public List<GetAllBrandsResponse> getAll() {
         return brandService.getAll();
     }
 
-    @PostMapping()
+    @PostMapping("/add")
     @ResponseStatus(code = HttpStatus.CREATED)
     public void add(@RequestBody CreateBrandRequest createBrandRequest) {
         this.brandService.add(createBrandRequest);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/get/{id}")
     public GetByIdBrandResponse getById(@PathVariable int id) {
         return brandService.getById(id);
     }
 
-    @PutMapping
+    @PutMapping("/update")
     public void update(@RequestBody UpdateBrandRequest updateBrandRequest) {
         this.brandService.update(updateBrandRequest);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable int id) {
         this.brandService.delete(id);
     }

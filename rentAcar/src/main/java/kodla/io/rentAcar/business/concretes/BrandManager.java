@@ -1,6 +1,8 @@
 package kodla.io.rentAcar.business.concretes;
 
 import kodla.io.rentAcar.business.abstracts.BrandService;
+import kodla.io.rentAcar.business.rules.BrandBusinessRules;
+import kodla.io.rentAcar.core.utilities.exceptions.BusinessException;
 import kodla.io.rentAcar.core.utilities.mappers.ModelMapperService;
 import kodla.io.rentAcar.dto.requests.CreateBrandRequest;
 import kodla.io.rentAcar.dto.requests.UpdateBrandRequest;
@@ -19,6 +21,7 @@ import java.util.stream.Collectors;
 public class BrandManager implements BrandService {
     private BrandRepository brandRepository;
     private ModelMapperService modelMapperService;
+    private BrandBusinessRules brandBusinessRules;
 
     @Override
     public List<GetAllBrandsResponse> getAll() {
@@ -42,6 +45,8 @@ public class BrandManager implements BrandService {
 
     @Override
     public void add(CreateBrandRequest createBrandRequest) {
+
+        this.brandBusinessRules.checkIfBrandNameExists(createBrandRequest.getName());
         Brand brand = this.modelMapperService.forRequest().map(createBrandRequest, Brand.class);
 
 /*        Brand brand = new Brand();

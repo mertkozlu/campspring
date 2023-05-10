@@ -12,7 +12,7 @@ public class BrandBusinessRules {
 
     public void checkIfBrandNameExists(String name) {
         if (this.brandRepository.existsByName(name)) {
-            throw new BusinessException("Brand already exists"); //Java exception types
+            throw new BusinessException("Brand name already exists"); //Java exception types
         }
 
     }
