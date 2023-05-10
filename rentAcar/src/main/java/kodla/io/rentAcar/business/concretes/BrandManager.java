@@ -29,22 +29,24 @@ public class BrandManager implements BrandService {
                 .map(brand -> this.modelMapperService.forResponse()
                         .map(brand, GetAllBrandsResponse.class)).collect(Collectors.toList());
 
-        //        List<GetAllBrandsResponse> brandsResponse = new ArrayList<GetAllBrandsResponse>();
-//        for(Brand brand : brands) {
-//            GetAllBrandsResponse responseItem = new GetAllBrandsResponse();
-//            responseItem.setId(brand.getId());
-//            responseItem.setName(brand.getName());
-//
-//            brandsResponse.add(responseItem);
-//        }
+        /*        List<GetAllBrandsResponse> brandsResponse = new ArrayList<GetAllBrandsResponse>();
+             for(Brand brand : brands) {
+             GetAllBrandsResponse responseItem = new GetAllBrandsResponse();
+             responseItem.setId(brand.getId());
+             responseItem.setName(brand.getName());
+
+             brandsResponse.add(responseItem);
+        } */
         return brandsResponse;
     }
 
     @Override
     public void add(CreateBrandRequest createBrandRequest) {
         Brand brand = this.modelMapperService.forRequest().map(createBrandRequest, Brand.class);
-//        Brand brand = new Brand();
-//        brand.setName(createBrandRequest.getName());
+
+/*        Brand brand = new Brand();
+          brand.setName(createBrandRequest.getName()); */
+
         this.brandRepository.save(brand);
     }
 

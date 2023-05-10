@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Table(name = "brands") //Brand tablosu oluşturuldu.
 @Data // Getter Setter oluşturukdu.
@@ -18,4 +19,6 @@ public class Brand {
     private int id;
     @Column(name = "name") // Kolonun veritabanında name karşılığı
     private String name;
+    @OneToMany(mappedBy = "brand")
+    private List<Model> models;
 }
