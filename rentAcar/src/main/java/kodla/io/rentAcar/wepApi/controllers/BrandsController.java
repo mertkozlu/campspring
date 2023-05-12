@@ -7,6 +7,7 @@ import kodla.io.rentAcar.business.abstracts.BrandService;
 import kodla.io.rentAcar.dto.responses.GetByIdBrandResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public class BrandsController {
 
     @PostMapping("/add")
     @ResponseStatus(code = HttpStatus.CREATED)
-    public void add(@RequestBody CreateBrandRequest createBrandRequest) {
+    public void add(@RequestBody @Validated CreateBrandRequest createBrandRequest) {
         this.brandService.add(createBrandRequest);
     }
 

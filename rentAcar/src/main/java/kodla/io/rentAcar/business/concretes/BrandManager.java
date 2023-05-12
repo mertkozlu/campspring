@@ -1,14 +1,14 @@
 package kodla.io.rentAcar.business.concretes;
 
 import kodla.io.rentAcar.business.abstracts.BrandService;
-import kodla.io.rentAcar.business.rules.BrandBusinessRules;
-import kodla.io.rentAcar.core.utilities.exceptions.BusinessException;
+import kodla.io.rentAcar.businessRules.BrandBusinessRules;
 import kodla.io.rentAcar.core.utilities.mappers.ModelMapperService;
 import kodla.io.rentAcar.dto.requests.CreateBrandRequest;
 import kodla.io.rentAcar.dto.requests.UpdateBrandRequest;
 import kodla.io.rentAcar.dto.responses.GetAllBrandsResponse;
 import kodla.io.rentAcar.dataAccess.abstracts.BrandRepository;
 import kodla.io.rentAcar.dto.responses.GetByIdBrandResponse;
+import kodla.io.rentAcar.dto.responses.GetByIdModelResponse;
 import kodla.io.rentAcar.entities.concretes.Brand;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

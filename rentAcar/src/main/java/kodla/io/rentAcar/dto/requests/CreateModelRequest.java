@@ -14,9 +14,9 @@ import javax.validation.constraints.Size;
 public class CreateModelRequest {
     @NotNull
     @NotBlank
-    @Size(min = 3, max = 20)
     private int BrandId;
     @NotNull
     @NotBlank
+    @Size(min = 3, max = 20)
     private String name;
 }

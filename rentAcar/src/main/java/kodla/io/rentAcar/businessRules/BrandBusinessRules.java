@@ -1,4 +1,4 @@
-package kodla.io.rentAcar.business.rules;
+package kodla.io.rentAcar.businessRules;
 
 import kodla.io.rentAcar.core.utilities.exceptions.BusinessException;
 import kodla.io.rentAcar.dataAccess.abstracts.BrandRepository;
