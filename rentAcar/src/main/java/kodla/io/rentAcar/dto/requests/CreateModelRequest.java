@@ -1,5 +1,6 @@
 package kodla.io.rentAcar.dto.requests;
 
+import kodla.io.rentAcar.entities.concretes.Brand;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,9 +15,10 @@ import javax.validation.constraints.Size;
 public class CreateModelRequest {
     @NotNull
     @NotBlank
-    private int BrandId;
+    private int brandId;
     @NotNull
     @NotBlank
     @Size(min = 3, max = 20)
-    private String name;
+    private String modelName;
+
 }

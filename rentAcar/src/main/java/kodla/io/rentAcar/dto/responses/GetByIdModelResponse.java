@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class GetByIdModelResponse {
-    private int id;
-    private String name;
+    private int modelId;
+    private String modelName;
 }

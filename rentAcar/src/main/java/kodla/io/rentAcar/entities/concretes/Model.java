@@ -16,10 +16,10 @@ public class Model {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private int modelId;
 
     @Column(name = "name")
-    private String name;
+    private String modelName;
     @ManyToOne
     @JoinColumn(name = "brand_id")
     private Brand brand;

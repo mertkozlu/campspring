@@ -15,10 +15,10 @@ import java.util.List;
 public class Brand {
     @Id //Primary Key alanı
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Id++
-    @Column(name = "id") // Kolonun veritabanında id karşılığı
-    private int id;
+    @Column(name = "brand_id") // Kolonun veritabanında id karşılığı
+    private int brandId;
     @Column(name = "name") // Kolonun veritabanında name karşılığı
-    private String name;
+    private String brandName;
     @OneToMany(mappedBy = "brand")
     private List<Model> models;
 }

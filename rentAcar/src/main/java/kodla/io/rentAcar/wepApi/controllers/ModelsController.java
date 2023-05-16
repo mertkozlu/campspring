@@ -4,7 +4,6 @@ import kodla.io.rentAcar.business.abstracts.ModelService;
 import kodla.io.rentAcar.dto.requests.CreateModelRequest;
 import kodla.io.rentAcar.dto.requests.UpdateBrandRequest;
 import kodla.io.rentAcar.dto.responses.GetAllModelsResponse;
-import kodla.io.rentAcar.dto.responses.GetByIdBrandResponse;
 import kodla.io.rentAcar.dto.responses.GetByIdModelResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -26,7 +25,7 @@ public class ModelsController {
 
     @PostMapping("/add")
     @ResponseStatus(code = HttpStatus.CREATED)
-    public void add(@RequestBody @Validated CreateModelRequest createModelRequest) {
+    public void add(@RequestBody CreateModelRequest createModelRequest) {
         this.modelService.add(createModelRequest);
     }
 
@@ -44,7 +43,6 @@ public class ModelsController {
     public void delete(@PathVariable int id) {
         this.modelService.delete(id);
     }
-
 
 
 }

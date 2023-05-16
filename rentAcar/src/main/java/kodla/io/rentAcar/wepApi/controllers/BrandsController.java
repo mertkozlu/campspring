@@ -1,9 +1,9 @@
 package kodla.io.rentAcar.wepApi.controllers;
 
+import kodla.io.rentAcar.business.abstracts.BrandService;
 import kodla.io.rentAcar.dto.requests.CreateBrandRequest;
 import kodla.io.rentAcar.dto.requests.UpdateBrandRequest;
 import kodla.io.rentAcar.dto.responses.GetAllBrandsResponse;
-import kodla.io.rentAcar.business.abstracts.BrandService;
 import kodla.io.rentAcar.dto.responses.GetByIdBrandResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

@@ -1,5 +1,6 @@
 package kodla.io.rentAcar.dto.responses;
 
+import kodla.io.rentAcar.entities.concretes.Model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,7 +9,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class GetAllModelsResponse {
-    private int id;
-    private String name;
-    private String bandName;
+    private int modelId;
+    private String modelName;
+    private int brandId;
+    private String brandName;
+
+//    public GetAllModelsResponse(Model model) {
+//        this.modelName = model.getModelName();
+//        this.modelId = model.getModelId();
+//        this.brandName = model.getBrand().getBrandName();
+//        this.brandId = model.getBrand().getBrandId();
+//
+//    }
 }

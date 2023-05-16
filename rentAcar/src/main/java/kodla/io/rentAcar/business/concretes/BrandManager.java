@@ -3,12 +3,11 @@ package kodla.io.rentAcar.business.concretes;
 import kodla.io.rentAcar.business.abstracts.BrandService;
 import kodla.io.rentAcar.businessRules.BrandBusinessRules;
 import kodla.io.rentAcar.core.utilities.mappers.ModelMapperService;
+import kodla.io.rentAcar.dataAccess.abstracts.BrandRepository;
 import kodla.io.rentAcar.dto.requests.CreateBrandRequest;
 import kodla.io.rentAcar.dto.requests.UpdateBrandRequest;
 import kodla.io.rentAcar.dto.responses.GetAllBrandsResponse;
-import kodla.io.rentAcar.dataAccess.abstracts.BrandRepository;
 import kodla.io.rentAcar.dto.responses.GetByIdBrandResponse;
-import kodla.io.rentAcar.dto.responses.GetByIdModelResponse;
 import kodla.io.rentAcar.entities.concretes.Brand;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -46,7 +45,7 @@ public class BrandManager implements BrandService {
     @Override
     public void add(CreateBrandRequest createBrandRequest) {
 
-        this.brandBusinessRules.checkIfBrandNameExists(createBrandRequest.getName());
+        this.brandBusinessRules.checkIfBrandNameExists(createBrandRequest.getBrandName());
         Brand brand = this.modelMapperService.forRequest().map(createBrandRequest, Brand.class);
 
 /*        Brand brand = new Brand();
@@ -73,4 +72,9 @@ public class BrandManager implements BrandService {
     public void delete(int id) {
         this.brandRepository.deleteById(id);
     }
+
+//    @Override
+//    public Brand getOneBrandById(int brandId) {
+//        return null;
+//    }
 }
