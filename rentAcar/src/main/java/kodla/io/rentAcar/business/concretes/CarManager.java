@@ -1,6 +1,7 @@
 package kodla.io.rentAcar.business.concretes;
 
 import kodla.io.rentAcar.business.abstracts.CarService;
+import kodla.io.rentAcar.businessRules.CarBusinessRules;
 import kodla.io.rentAcar.core.utilities.mappers.ModelMapperService;
 import kodla.io.rentAcar.dataAccess.abstracts.CarRepository;
 import kodla.io.rentAcar.dto.requests.CreateCarRequest;
@@ -20,6 +21,8 @@ public class CarManager implements CarService {
     private CarRepository carRepository;
     private ModelMapperService modelMapperService;
 
+    private CarBusinessRules carBusinessRules;
+
     @Override
     public List<GetAllCarsResponse> getAll() {
 
@@ -35,6 +38,7 @@ public class CarManager implements CarService {
     @Override
     public void add(CreateCarRequest createCarRequest) {
 
+        this.carBusinessRules.checkIfCarPlateExists(createCarRequest.getPlate());
         Car car = this.modelMapperService.forRequest().map(createCarRequest, Car.class);
         carRepository.save(car);
     }
