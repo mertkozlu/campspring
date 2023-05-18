@@ -1,14 +1,12 @@
 package kodla.io.rentAcar.business.concretes;
 
-import kodla.io.rentAcar.business.abstracts.BrandService;
 import kodla.io.rentAcar.business.abstracts.ModelService;
 import kodla.io.rentAcar.core.utilities.mappers.ModelMapperService;
 import kodla.io.rentAcar.dataAccess.abstracts.ModelRepository;
 import kodla.io.rentAcar.dto.requests.CreateModelRequest;
-import kodla.io.rentAcar.dto.requests.UpdateBrandRequest;
+import kodla.io.rentAcar.dto.requests.UpdateModelRequest;
 import kodla.io.rentAcar.dto.responses.GetAllModelsResponse;
 import kodla.io.rentAcar.dto.responses.GetByIdModelResponse;
-import kodla.io.rentAcar.entities.concretes.Brand;
 import kodla.io.rentAcar.entities.concretes.Model;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -58,7 +56,7 @@ public class ModelManager implements ModelService {
     }
 
     @Override
-    public void update(UpdateBrandRequest updateModelRequest) {
+    public void update(UpdateModelRequest updateModelRequest) {
         Model model = this.modelMapperService.forRequest().map(updateModelRequest, Model.class);
         this.modelRepository.save(model);
 

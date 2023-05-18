@@ -2,12 +2,11 @@ package kodla.io.rentAcar.wepApi.controllers;
 
 import kodla.io.rentAcar.business.abstracts.ModelService;
 import kodla.io.rentAcar.dto.requests.CreateModelRequest;
-import kodla.io.rentAcar.dto.requests.UpdateBrandRequest;
+import kodla.io.rentAcar.dto.requests.UpdateModelRequest;
 import kodla.io.rentAcar.dto.responses.GetAllModelsResponse;
 import kodla.io.rentAcar.dto.responses.GetByIdModelResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -35,8 +34,8 @@ public class ModelsController {
     }
 
     @PutMapping("/update")
-    public void update(@RequestBody UpdateBrandRequest updateBrandRequest) {
-        this.modelService.update(updateBrandRequest);
+    public void update(@RequestBody UpdateModelRequest updateModelRequest) {
+        this.modelService.update(updateModelRequest);
     }
 
     @DeleteMapping("/delete/{id}")

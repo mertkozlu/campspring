@@ -1,7 +1,7 @@
 package kodla.io.rentAcar.business.abstracts;
 
 import kodla.io.rentAcar.dto.requests.CreateModelRequest;
-import kodla.io.rentAcar.dto.requests.UpdateBrandRequest;
+import kodla.io.rentAcar.dto.requests.UpdateModelRequest;
 import kodla.io.rentAcar.dto.responses.GetAllModelsResponse;
 import kodla.io.rentAcar.dto.responses.GetByIdModelResponse;
 
@@ -14,7 +14,7 @@ public interface ModelService {
 
     GetByIdModelResponse getById(int id);
 
-    void update(UpdateBrandRequest updateModelRequest);
+    void update(UpdateModelRequest updateModelRequest);
 
     void delete(int id);
 }

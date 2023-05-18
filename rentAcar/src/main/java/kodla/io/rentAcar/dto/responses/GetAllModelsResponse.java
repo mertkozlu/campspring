@@ -1,6 +1,5 @@
 package kodla.io.rentAcar.dto.responses;
 
-import kodla.io.rentAcar.entities.concretes.Model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

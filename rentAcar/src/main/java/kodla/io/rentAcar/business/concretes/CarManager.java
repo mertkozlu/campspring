@@ -4,7 +4,9 @@ import kodla.io.rentAcar.business.abstracts.CarService;
 import kodla.io.rentAcar.core.utilities.mappers.ModelMapperService;
 import kodla.io.rentAcar.dataAccess.abstracts.CarRepository;
 import kodla.io.rentAcar.dto.requests.CreateCarRequest;
+import kodla.io.rentAcar.dto.requests.UpdateCarRequest;
 import kodla.io.rentAcar.dto.responses.GetAllCarsResponse;
+import kodla.io.rentAcar.dto.responses.GetByIdCarResponse;
 import kodla.io.rentAcar.entities.concretes.Car;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -35,5 +37,24 @@ public class CarManager implements CarService {
 
         Car car = this.modelMapperService.forRequest().map(createCarRequest, Car.class);
         carRepository.save(car);
+    }
+
+    @Override
+    public GetByIdCarResponse getById(int id) {
+        Car car = this.carRepository.findById(id).orElseThrow();
+        GetByIdCarResponse response = this.modelMapperService.forResponse()
+                .map(car, GetByIdCarResponse.class);
+        return response;
+    }
+
+    @Override
+    public void delete(int id) {
+        this.carRepository.deleteById(id);
+    }
+
+    @Override
+    public void update(UpdateCarRequest updateCarRequest) {
+        Car car = this.modelMapperService.forRequest().map(updateCarRequest, Car.class);
+        this.carRepository.save(car);
     }
 }
