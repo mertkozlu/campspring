@@ -10,11 +10,21 @@ import javax.validation.constraints.NotNull;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UpdateBrandRequest {
+public class CreateCarRequest {
     @NotNull
     @NotBlank
-    private int brandId;
+    private int modelId;
     @NotNull
     @NotBlank
-    private String brandName;
+    private String plate;
+    @NotNull
+    @NotBlank
+    private double dailyPrice;
+    @NotNull
+    @NotBlank
+    private int modelYear;
+    @NotNull
+    @NotBlank
+    private String state;
+
 }

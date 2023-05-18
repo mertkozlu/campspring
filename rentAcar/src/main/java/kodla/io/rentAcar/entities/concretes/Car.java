@@ -15,7 +15,7 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private int carId;
 
     @Column(name = "plate", unique = true)
     private String plate;
@@ -27,7 +27,7 @@ public class Car {
     private int modelYear;
 
     @Column(name = "state")
-    private int state;
+    private String state;
 
     @ManyToOne
     @JoinColumn(name = "model_id")
