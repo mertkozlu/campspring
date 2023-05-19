@@ -25,7 +25,7 @@ public class CarsController {
 
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
-    public void add(@RequestBody CreateCarRequest createCarRequest) {
+    public void add(@RequestBody @Validated CreateCarRequest createCarRequest) {
         this.carService.add(createCarRequest);
     }
 

@@ -1,6 +1,7 @@
 package kodla.io.rentAcar.business.concretes;
 
 import kodla.io.rentAcar.business.abstracts.ModelService;
+import kodla.io.rentAcar.businessRules.ModelBusinessRules;
 import kodla.io.rentAcar.core.utilities.mappers.ModelMapperService;
 import kodla.io.rentAcar.dataAccess.abstracts.ModelRepository;
 import kodla.io.rentAcar.dto.requests.CreateModelRequest;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 public class ModelManager implements ModelService {
     private ModelRepository modelRepository;
     private ModelMapperService modelMapperService;
+    private ModelBusinessRules modelBusinessRules;
 //    private BrandService brandService;
 
     @Override
@@ -35,6 +37,7 @@ public class ModelManager implements ModelService {
 
     @Override
     public void add(CreateModelRequest createModelRequest) {
+        this.modelBusinessRules.checkIfModelNameExists(createModelRequest.getModelName());
         Model model = this.modelMapperService.forRequest()
                 .map(createModelRequest, Model.class);
         modelRepository.save(model);

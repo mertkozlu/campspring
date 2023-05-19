@@ -7,6 +7,7 @@ import kodla.io.rentAcar.dto.responses.GetAllModelsResponse;
 import kodla.io.rentAcar.dto.responses.GetByIdModelResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public class ModelsController {
 
     @PostMapping("/add")
     @ResponseStatus(code = HttpStatus.CREATED)
-    public void add(@RequestBody CreateModelRequest createModelRequest) {
+    public void add(@RequestBody @Validated CreateModelRequest createModelRequest) {
         this.modelService.add(createModelRequest);
     }
 

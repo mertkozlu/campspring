@@ -12,7 +12,6 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 public class UpdateBrandRequest {
     @NotNull
-    @NotBlank
     private int brandId;
     @NotNull
     @NotBlank

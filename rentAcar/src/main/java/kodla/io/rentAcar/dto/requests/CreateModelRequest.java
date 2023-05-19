@@ -13,7 +13,6 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 public class CreateModelRequest {
     @NotNull
-    @NotBlank
     private int brandId;
     @NotNull
     @NotBlank

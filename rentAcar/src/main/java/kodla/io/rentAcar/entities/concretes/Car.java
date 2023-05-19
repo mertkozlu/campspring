@@ -14,7 +14,7 @@ import javax.persistence.*;
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "car_id")
     private int carId;
 
     @Column(name = "plate", unique = true)

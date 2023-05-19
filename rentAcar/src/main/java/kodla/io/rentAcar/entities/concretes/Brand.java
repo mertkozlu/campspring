@@ -17,7 +17,7 @@ public class Brand {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Id++
     @Column(name = "brand_id") // Kolonun veritabanında id karşılığı
     private int brandId;
-    @Column(name = "name") // Kolonun veritabanında name karşılığı
+    @Column(name = "brand_name") // Kolonun veritabanında name karşılığı
     private String brandName;
     @OneToMany(mappedBy = "brand")
     private List<Model> models;
